@@ -111,6 +111,34 @@ body {
   font-weight: 600;
   color: #1C1C1C;
   font-size: 15px;
+  position: relative;
+}
+
+.header-link:focus {
+  outline-offset: 2px;
+  outline: 1px solid #71a7e2;
+}
+
+.header-link:hover {
+  color: #71a7e2;
+}
+.header-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #3474ba;
+  opacity: 0;
+}
+
+.header-link:active::after {
+  opacity: 1;
+}
+.header-link:active {
+  color: #3172B9;
+  outline: none;
 }
 
 .header-container {
@@ -130,6 +158,8 @@ body {
 }
 
 .btn {
+  position: relative;
+  outline: none;
   font-weight: 600;
   font-size:15px;
   text-transform: uppercase;
@@ -137,6 +167,34 @@ body {
   background-color: #3172b9;
   color: #ffffff;
   border-radius: 3px;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: inherit;
+  border: 1px solid #3172b9;
+  outline: none;
+  opacity: 0;
+}
+
+.btn:focus::after {
+  opacity: 1;
+}
+
+.btn:hover {
+  background-color: #71a7e2;
+}
+
+.btn:active {
+  background-color: #0E3B6C;
+}
+.btn:active::after {
+  opacity: 0;
 }
 
 /* hero */
@@ -219,13 +277,24 @@ body {
   border-radius: 5px;
 }
 
+.services-item:hover {
+  border-color: #3172b9;
+  background-color: #3172b9;
+}
+
 .services-item:not(:nth-child(4n)) {
   margin-right: 30px;
 }
 
 .services-item-icon {
+  fill: #3172b9;
   margin-bottom: 25px;
 }
+
+.services-item:hover .services-item-icon {
+  fill: #fff;
+}
+
 
 .services-item-title {
   margin: 0;
@@ -234,6 +303,14 @@ body {
   font-size: 20px;
   line-height: 130%;
   color: #1C1C1C;
+}
+
+.services-item:hover .services-item-title {
+  color: #ffffff;
+}
+
+.services-item:hover .services-item-desc {
+  color: #fff;
 }
 
 .services-item-desc {
@@ -301,6 +378,44 @@ body {
   line-height: 150%;
   color: #787878;
   max-width: 210px;
+}
+
+.block-preview-link {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.block-preview-link:focus {
+  background-color: #71a7e2;
+}
+
+.block-preview-link:focus .block-preview-title {
+  color: #ffffff;
+}
+
+.block-preview-link:focus .block-preview-descr {
+  color: #ffffff;
+}
+
+.block-preview-link:focus .block-preview-time {
+  color: #ffffff;
+}
+
+.block-preview-link:hover {
+  background-color: #3172b9;
+}
+
+.block-preview-link:hover .block-preview-title {
+  color: #ffffff;
+}
+
+.block-preview-link:hover .block-preview-descr {
+  color: #ffffff;
+}
+
+.block-preview-link:hover .block-preview-time {
+  color: #ffffff;
 }
 
 /* clients */
